@@ -158,15 +158,13 @@ function hideElement(id) {
   document.getElementById(id).classList.add('hidden');
 }
 
-// Hide both the title and homeScreen buttons
+// Hide the home screen (title and buttons)
 function hideHomeScreen() {
-  document.querySelector('h1').classList.add('hidden');
   document.getElementById('homeScreen').classList.add('hidden');
 }
 
-// Show both the title and homeScreen buttons
+// Show the home screen (title and buttons)
 function showHomeScreen() {
-  document.querySelector('h1').classList.remove('hidden');
   document.getElementById('homeScreen').classList.remove('hidden');
 }
 
