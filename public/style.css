@@ -1,0 +1,105 @@
+body {
+  background: #ffe5b4; /* light orange */
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 32px 24px;
+}
+
+h1, h2, h3 {
+  color: #ff9800;
+  text-align: center;
+}
+
+button {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  margin: 8px 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover, button:focus {
+  background: #1565c0;
+}
+
+#homeBtn {
+  position: fixed;
+  top: 20px;
+  left: 20px; /* Change to right: 20px; if you want it top-right */
+  z-index: 1000;
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#homeBtn:hover {
+  background: #1565c0;
+}
+
+#homeScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 250px;
+}
+
+#homeScreen button {
+  width: 200px;
+  margin: 16px 0;
+  font-size: 1.2rem;
+}
+
+input[type="text"], input[type="number"], input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin: 4px 0;
+  font-size: 1rem;
+}
+
+#scoreBoard {
+  margin-top: 20px;
+  font-weight: bold;
+  color: #1976d2;
+  text-align: center;
+}
+
+#feedback {
+  font-size: 1.2em;
+  margin: 16px 0;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#answerButtons button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+}

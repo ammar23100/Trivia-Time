@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Trivia Time</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button id="homeBtn" onclick="goHome()">🏠</button>
+  <div class="container">
+    <h1>It's Trivia Time!</h1>
+    <div id="homeScreen">
+      <button onclick="startSolo()">Solo Play</button>
+      <button onclick="showMultiplayerSetup()">Multiplayer</button>
+    </div>
+
+    <div id="multiplayerSetup" class="hidden">
+      <h2>Enter Team Names (1–5 teams)</h2>
+      <div id="teamInputs"></div>
+      <button onclick="addTeamInput()">Add Team</button>
+      <button onclick="startMultiplayer()">Start Multiplayer</button>
+    </div>
+
+    <div id="categorySelection" class="hidden">
+      <h2>Select a Category</h2>
+      <div id="categories"></div>
+    </div>
+
+    <div id="questionSection" class="hidden">
+      <h2 id="categoryTitle"></h2>
+      <p id="questionText"></p>
+      <div id="answerButtons"></div>
+      <p id="feedback"></p>
+      <div id="scoreBoard"></div>
+      <div id="teamSelector" class="hidden">
+        <p>Who answered correctly?</p>
+        <select id="teamDropdown"></select>
+        <button onclick="assignPoints()">Assign Points</button>
+      </div>
+      <button id="nextButton" class="hidden" onclick="loadNextQuestion()">Next Question</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
