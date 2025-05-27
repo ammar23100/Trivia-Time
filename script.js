@@ -28,8 +28,8 @@ function startSolo() {
   multiplayerMode = false;
   correctCount = 0;
   totalCount = 0;
+  hideHomeScreen();
   showElement('categorySelection');
-  hideElement('homeScreen');
   updateScoreBoard();
 }
 
@@ -38,7 +38,7 @@ function showMultiplayerSetup() {
   soloMode = false;
   teams = [];
   teamScores = {};
-  hideElement('homeScreen');
+  hideHomeScreen();
   showElement('multiplayerSetup');
   document.getElementById('teamInputs').innerHTML = '';
   addTeamInput(); // Start with one input
@@ -128,7 +128,7 @@ function handleAnswer(selected, correct) {
   } else {
     feedback.textContent = `❌ Wrong! Correct answer was: ${correct}`;
   }
-  updateScoreBoard(); // <-- Make sure this is here, outside the if/else
+  updateScoreBoard();
   showElement('nextButton');
 }
 
@@ -151,6 +151,25 @@ function updateScoreBoard() {
   }
 }
 
+function showElement(id) {
+  document.getElementById(id).classList.remove('hidden');
+}
+function hideElement(id) {
+  document.getElementById(id).classList.add('hidden');
+}
+
+// Hide both the title and homeScreen buttons
+function hideHomeScreen() {
+  document.querySelector('h1').classList.add('hidden');
+  document.getElementById('homeScreen').classList.add('hidden');
+}
+
+// Show both the title and homeScreen buttons
+function showHomeScreen() {
+  document.querySelector('h1').classList.remove('hidden');
+  document.getElementById('homeScreen').classList.remove('hidden');
+}
+
 // HOME BUTTON FUNCTIONALITY
 function goHome() {
   // Reset all state
@@ -167,16 +186,9 @@ function goHome() {
   hideElement('categorySelection');
   hideElement('questionSection');
   hideElement('multiplayerSetup');
-  showElement('homeScreen');
+  showHomeScreen();
   updateScoreBoard();
   document.getElementById('feedback').textContent = '';
   document.getElementById('questionText').textContent = '';
   document.getElementById('answerButtons').innerHTML = '';
-}
-
-function showElement(id) {
-  document.getElementById(id).classList.remove('hidden');
-}
-function hideElement(id) {
-  document.getElementById(id).classList.add('hidden');
 }
